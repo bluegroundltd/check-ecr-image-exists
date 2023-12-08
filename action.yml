@@ -17,7 +17,7 @@ inputs:
     required: true
   access-key-id:
     description: 'AWS access key id'
-    required: false 
+    required: false
   secret-access-key:
     description: 'AWS secret access kry'
     required: false
@@ -26,7 +26,7 @@ outputs:
     description: 'Flag indicating whether the docker image exists or not'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://public.ecr.aws/l2j5o5b6/bluegroundltd/check-ecr-image-exists:v2'
   args:
     - ${{ inputs.region }}
     - ${{ inputs.repository-name }}
